@@ -11,6 +11,28 @@
   </head>
 
   <body>
+    <header>
+      <div class="logo">
+        <%= image_tag("logo.png", alt: "Логотип", width: "100", height: "100") %>
+      </div>
+
+      <nav>
+        <%= link_to "Цветы", "#" %>
+        <%= link_to "Кондитерская", "#" %>
+        <%= link_to "Доставка", "#" %>
+        <%= link_to "Партнерам", "#" %>
+        <%= link_to "О нас", "#" %>
+      </nav>
+
+      <div class="account">
+        <%= link_to "Кабинет", "#" %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <footer>
+      footer block
+    </footer>
   </body>
 </html>
