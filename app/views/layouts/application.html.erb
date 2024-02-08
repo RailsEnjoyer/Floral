@@ -1,38 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
   <head>
     <title>Floral</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Bogdan Davidovich">
+    <meta name="keywords" content="Продажа цветов, маркетплейс, цветы, букеты, кондитерская, доставка цветов">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "home", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <%= image_tag("logo.png", alt: "Логотип", width: "100", height: "100") %>
-      </div>
-
-      <nav>
-        <%= link_to "Цветы", "#" %>
-        <%= link_to "Кондитерская", "#" %>
-        <%= link_to "Доставка", "#" %>
-        <%= link_to "Партнерам", "#" %>
-        <%= link_to "О нас", "#" %>
-      </nav>
-
-      <div class="account">
-        <%= link_to "Кабинет", "#" %>
+    <!--header section starts-->
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <%= link_to("#", target: "_blank", class: "logo") do %>
+            <%= image_tag("logo.png", alt: "Логотип Floral", width: "80", height: "80") %>
+          <% end %>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to "Цветы", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "Кондитерская", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "Доставка", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "О нас", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "Партнерам", "#", target: "_blank", class: "menu__link" %>
+            </li>
+          </ul>
+          <a class="cart">
+            <%= link_to("#", target: "_blank") do %>
+              <%= image_tag("cart.png", alt: "Корзина", class: "cart-image") %>
+              <span class="cart-count cart-count__on">4</span>
+            <% end %>
+          </a>
+          <div class="account">
+            <%= link_to "Кабинет", "#", target: "_blank" %>
+          </div>
+        </nav>
       </div>
     </header>
+    <!--header section ends-->
 
+    <!--main section starts-->
     <%= yield %>
+    <!--main section ends-->
 
+    <!--footer section starts-->
     <footer>
-      footer block
     </footer>
+    <!--footer section ends-->
   </body>
 </html>
