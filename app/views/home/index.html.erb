@@ -1,7 +1,53 @@
-<main class="main">
-  <section class="top">
+<main class="main top">
+  <section>
     <div class="container">
-      
+      <h1 class="title animated-right">.floral - онлайн маркетплейс</h1>
+      <p class="subtitle animated">В нашем магазине - ваш лучший выбор для цветочных настроений, где каждый бутон 
+      - это уникальный кусочек природы, готовый украсить ваш день.</p>
+      <button class="buy-btn">
+        <span class="buy-btn__text">Перейти в каталог*</span> 
+      </button>
+      <p class="buy__text">*Каталог поставщиков</p>
+    </div>
+  </section>
+  <section class="pros">
+    <div class="container">
+      <div class="pros__titles">
+        <h2 class="pros__title section-title">Почему наш магазин - ваш выбор?</h2>
+        <p class="pros__text">Легко подобрать букет</p>
+      </div>
+      <div class="tabs">
+      </div>
     </div>
   </section>
 </main>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function() {
+    var elements = document.querySelectorAll('.hidden');
+
+    function checkScroll() {
+      elements.forEach(function(element) {
+        var position = element.getBoundingClientRect();
+
+        // Добавление классов при прокрутке вниз
+        if (position.top < window.innerHeight * 0.75) {
+          element.classList.add('animated');
+        }
+
+        if (position.top < window.innerHeight * 0.75 && !element.classList.contains('animated-right')) {
+          element.classList.add('animated-right');
+        }
+
+        // Добавление классов при прокрутке вверх
+        if (position.bottom > window.innerHeight * 0.1) {
+          element.classList.remove('animated');
+          element.classList.remove('animated-right');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', checkScroll);
+    checkScroll();
+  });
+</script>
