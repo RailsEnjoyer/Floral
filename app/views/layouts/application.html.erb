@@ -20,7 +20,7 @@
       <div class="container">
         <nav class="nav">
           <%= link_to("#", target: "_blank", class: "logo") do %>
-            <%= image_tag("logo.png", alt: "Логотип Floral", width: "85", height: "85") %>
+            <%= image_tag("logo.png", alt: "Логотип Floral", width: "80", height: "80") %>
           <% end %>
           <ul class="menu">
             <li class="menu__list">
@@ -38,13 +38,13 @@
             <li class="menu__list">
               <%= link_to "Партнерам", "#", target: "_blank", class: "menu__link" %>
             </li>
+            <li class="menu__list cart">
+              <%= link_to("#", target: "_blank") do %>
+                <%= image_tag("cart.png", alt: "Корзина", class: "cart-image") %>
+                <span class="cart-count cart-count__on">4</span>
+              <% end %>
+            </li>
           </ul>
-          <a class="cart">
-            <%= link_to("#", target: "_blank") do %>
-              <%= image_tag("cart.png", alt: "Корзина", class: "cart-image") %>
-              <span class="cart-count cart-count__on">4</span>
-            <% end %>
-          </a>
           <div class="account">
             <%= link_to "Кабинет", "#", target: "_blank" %>
           </div>

@@ -28,6 +28,16 @@ img {
   max-width: 100%;
 }
 
+button {
+  color: inherit;
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+}
+
 .container {
   max-width: 1620px;
   padding: 0 10px;
@@ -48,21 +58,25 @@ body{
 }
 
 .nav{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
+  justify-content: center;
   height: 80px;
 }
 
 .menu {
   display: flex;
-  gap: 0 100px;
+  gap: 0 60px;
+  justify-self: center;
+  margin-top: 20px;
 }
 
 .menu__link {
   position: relative;
   overflow: hidden;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .menu__link::before {
@@ -83,12 +97,23 @@ body{
   transform: scaleX(1);
 }
 
+.logo {
+  justify-self: start;
+}
+
 .cart {
   position: relative;
+  justify-self: end;
+}
+
+.account {
+  justify-self: end;
 }
 
 .cart-image {
   height: 30px;
+  width: 30px;
+  margin-right: 25px;
 }
 
 .cart-count__on {
