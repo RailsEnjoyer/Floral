@@ -93,7 +93,7 @@
 }
 
 .pros {
-  padding: 250px 0;
+  padding: 210px 0;
   background: linear-gradient(to right, rgb(222, 222, 222), rgb(221, 221, 221) 50%, rgb(207, 212, 210) 100%);
 }
 
@@ -135,6 +135,7 @@
 .tabs__btn-item{
   font-weight: 700;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 .tabs__btn-item--active{
@@ -160,8 +161,33 @@
   margin-left: 60px;
 }
 
+.tabs__content-subtitle{
+  padding-top: 50px;
+  line-height: 2;
+}
+
 .tabs__content-box h3{
   font-weight: 400;
   font-size: 24px;
   margin-bottom: 5px;
+}
+
+.tabs__btn-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.tabs__btn-item.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tabs__content-item {
+  opacity: 0; /* Изначально устанавливаем нулевую прозрачность */
+  transition: opacity 0.5s ease; /* Добавляем анимацию изменения прозрачности в течение 0.5 секунд */
+}
+
+.tabs__content-item.tabs__content-item--active {
+  opacity: 1; /* Когда класс активен, устанавливаем полную прозрачность */
 }
