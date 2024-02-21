@@ -53,11 +53,12 @@ body{
 }
 
 .header{
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid rgb(13, 116, 0);
   background-color: rgb(241, 241, 241);
 }
 
 .nav{
+  font-size: 18px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -99,6 +100,7 @@ body{
 
 .logo {
   justify-self: start;
+  width: 100px;
 }
 
 .cart {

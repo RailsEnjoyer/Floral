@@ -3,9 +3,9 @@
   background-image: url('/assets/main-bgp.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid rgb(13, 116, 0);
 }
 
 .title{
@@ -24,15 +24,17 @@
   font-size: 13px;
 }
 
-.buy-btn{
+.buy-btn {
   cursor: pointer;
   border: none;
-  background: linear-gradient(140deg, rgb(241, 241, 241), rgba(124, 124, 124, 0.93)100%);
+  background: linear-gradient(140deg, rgb(240, 239, 239), rgba(228, 228, 228, 0.93) 100%);
   display: flex;
   padding: 1px;
   text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  border: 1px solid rgb(13, 116, 0);
+  border-radius: 1em;
 }
 
 .buy-btn__text{
@@ -93,8 +95,8 @@
 }
 
 .pros {
-  padding: 210px 0;
-  background: linear-gradient(to right, rgb(222, 222, 222), rgb(221, 221, 221) 50%, rgb(207, 212, 210) 100%);
+  padding: 150px 0;
+  background: linear-gradient(to bottom right, rgb(241, 240, 245), rgb(241, 240, 245) 50%, rgb(161, 219, 172)100%);
 }
 
 .pros__titles {
@@ -136,6 +138,7 @@
   font-weight: 700;
   margin-bottom: 20px;
   margin-top: 20px;
+
 }
 
 .tabs__btn-item--active{
@@ -184,10 +187,98 @@
 }
 
 .tabs__content-item {
-  opacity: 0; /* Изначально устанавливаем нулевую прозрачность */
-  transition: opacity 0.5s ease; /* Добавляем анимацию изменения прозрачности в течение 0.5 секунд */
+  opacity: 0; 
+  transition: opacity 0.5s ease; 
 }
 
 .tabs__content-item.tabs__content-item--active {
-  opacity: 1; /* Когда класс активен, устанавливаем полную прозрачность */
+  opacity: 1; 
+}
+
+.offer {
+  padding: 150px 0;
+  margin-bottom: 100px;
+  background: linear-gradient(to top right, rgb(241, 240, 245), rgb(241, 240, 245) 50%, rgb(161, 219, 172)100%);
+  border-bottom: 1px solid rgb(13, 116, 0);
+}
+
+.offer__title{
+  margin-bottom: 50px;
+}
+
+.offer__inner {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+}
+
+.offer__descr {
+  padding-right: 10px;
+}
+
+.offer__descr-title {
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid rgba(13, 116, 0, 0.5);
+}
+
+.offer__descr-text{
+  margin-bottom: 24px;
+}
+
+.offer__item {
+  border: 3px solid rgba(13, 116, 0, 0.5);
+  padding: 10px 20px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.offer__item-img {
+  margin-bottom: 10px;
+}
+
+.offer__item-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.offer__item-text {
+  margin-bottom: 30px;
+}
+
+.offer__item-link {
+  background: rgb(13, 116, 0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: auto;
+  font-weight: 700;
+  text-align: start;
+}
+
+.offer__item-link:hover {
+  background: rgb(0, 0, 0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.3s;
+}
+
+.offer__item-title,
+.offer__descr-title,
+.offer__descr-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.offer__item-title.animated,
+.offer__descr-title.animated,
+.offer__descr-text.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.buy {
+  margin-bottom: 110px;
+  text-align: center;
 }

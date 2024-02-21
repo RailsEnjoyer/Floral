@@ -89,6 +89,46 @@
       </div>
     </div>
   </section>
+  <section class="offer">
+    <div class="container">
+      <h2 class="section-title offer__title">Мы предлагаем:</h2>
+      <div class="offer__inner">
+        <div class="offer__descr">
+          <p class="offer__descr-title">Цветочное вдохновение</p><br><br>
+          <p class="offer__descr-text">Откройте для себя наше разнообразие цветов и создайте свой уголок красоты.<br><br> Неважно, ищете ли вы яркий акцент 
+            или нежное настроение, у нас есть букеты для каждого важного момента в вашей жизни.<br><br> Позвольте цветам рассказать вашу уникальную историю.</p>
+        </div>
+        <div class="offer__item">
+          <%= image_tag("content-6.jpg", alt: "выбрать цветы", class:"offer__item-img") %>
+          <h3 class="offer__item-title offer__title">Выбирайте букеты</h3>
+          <p class="offer__item-text">Откройте для себя наше обширное разнообразие цветов.<br><br> Независимо от того, ищете ли вы яркий букет для особого случая
+            или нежные цветы для повседневного уюта, у нас есть подборка, чтобы удовлетворить ваш взгляд и вдохновить ваш день.</p>
+          <a class="offer__item-link" href="#">Перейти</a>
+        </div>
+        <div class="offer__item">
+          <%= image_tag("content-6.jpg", alt: "кондитерская", class:"offer__item-img") %>
+          <h3 class="offer__item-title offer__title">Не забудьте сладкое</h3>
+          <p class="offer__item-text">Погрузитесь в мир сладких наслаждений в нашей кондитерской.<br><br> Наши уникальные десерты станут вкусным дополнением к 
+            любому моменту. Позвольте себе немного радости в каждом угощении!</p>
+          <a class="offer__item-link" href="#">Перейти</a>
+        </div>
+        <div class="offer__item">
+          <%= image_tag("content-6.jpg", alt: "поставщикам", class:"offer__item-img") %>
+          <h3 class="offer__item-title offer__title">Хотите сотрудничать?</h3>
+          <p class="offer__item-text">Если у вас есть страсть к цветам или вы профессиональный кондитер, или имеете свой магазин, мы всегда рады новым 
+            талантам в нашей команде.<br><br> Давайте создадим вместе что-то удивительное.<br><br> Обращайтесь для сотрудничества и воплощения ваших идей в жизнь.</p>
+          <a class="offer__item-link" href="#">Перейти</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="buy">
+    <p class="buy__bg">СПЕЦПРЕДЛОЖЕНИЕ</p>
+    <%= image_tag("sale-buy.png", alt: "спецпредложение", class:"buy__img") %>
+    <button class="buy-btn">
+        <span class="buy-btn__text">Посмотреть</span> 
+    </button>
+  </div>
 </main>
 
 <script defer>
@@ -107,7 +147,7 @@
     function handleAnimation() {
       elements.forEach(function (element, index) {
         var position = element.getBoundingClientRect();
-        var isVisible = position.top < window.innerHeight * 0.75;
+        var isVisible = position.top < window.innerHeight * 1;
 
         if (isVisible && !element.classList.contains('animated')) {
           addAnimatedClass(element, index * 200); // 500 мс между каждым элементом
@@ -158,3 +198,35 @@
     });
   });
 </script>
+
+<script defer>
+  document.addEventListener("DOMContentLoaded", function () {
+    var elements = document.querySelectorAll('.offer__title, .offer__descr-title, .offer__descr-text, .offer__item-title');
+
+    function handleAnimation() {
+      elements.forEach(function (element) {
+        var position = element.getBoundingClientRect();
+        var isVisible = position.top < window.innerHeight * 0.75;
+
+        if (isVisible && !element.classList.contains('animated')) {
+          element.classList.add('animated');
+        } else if (!isVisible && element.classList.contains('animated')) {
+          element.classList.remove('animated');
+        }
+      });
+    }
+
+    var debounceTimeout;
+    function debounce(func) {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(func, 100);
+    }
+
+    window.addEventListener('scroll', function () {
+      debounce(handleAnimation);
+    });
+
+    handleAnimation(); // Вызываем функцию для первоначальной установки классов
+  });
+</script>
+
