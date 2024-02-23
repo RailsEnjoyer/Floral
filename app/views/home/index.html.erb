@@ -99,21 +99,21 @@
             или нежное настроение, у нас есть букеты для каждого важного момента в вашей жизни.<br><br> Позвольте цветам рассказать вашу уникальную историю.</p>
         </div>
         <div class="offer__item">
-          <%= image_tag("content-6.jpg", alt: "выбрать цветы", class:"offer__item-img") %>
+          <%= image_tag("offer-img1.png", alt: "выбрать цветы", class:"offer__item-img") %>
           <h3 class="offer__item-title offer__title">Выбирайте букеты</h3>
           <p class="offer__item-text">Откройте для себя наше обширное разнообразие цветов.<br><br> Независимо от того, ищете ли вы яркий букет для особого случая
             или нежные цветы для повседневного уюта, у нас есть подборка, чтобы удовлетворить ваш взгляд и вдохновить ваш день.</p>
           <a class="offer__item-link" href="#">Перейти</a>
         </div>
         <div class="offer__item">
-          <%= image_tag("content-6.jpg", alt: "кондитерская", class:"offer__item-img") %>
+          <%= image_tag("offer-img2.png", alt: "кондитерская", class:"offer__item-img") %>
           <h3 class="offer__item-title offer__title">Не забудьте сладкое</h3>
           <p class="offer__item-text">Погрузитесь в мир сладких наслаждений в нашей кондитерской.<br><br> Наши уникальные десерты станут вкусным дополнением к 
             любому моменту. Позвольте себе немного радости в каждом угощении!</p>
           <a class="offer__item-link" href="#">Перейти</a>
         </div>
         <div class="offer__item">
-          <%= image_tag("content-6.jpg", alt: "поставщикам", class:"offer__item-img") %>
+          <%= image_tag("offer-img3.png", alt: "поставщикам", class:"offer__item-img") %>
           <h3 class="offer__item-title offer__title">Хотите сотрудничать?</h3>
           <p class="offer__item-text">Если у вас есть страсть к цветам или вы профессиональный кондитер, или имеете свой магазин, мы всегда рады новым 
             талантам в нашей команде.<br><br> Давайте создадим вместе что-то удивительное.<br><br> Обращайтесь для сотрудничества и воплощения ваших идей в жизнь.</p>
@@ -122,13 +122,49 @@
       </div>
     </div>
   </section>
-  <div class="buy">
+  <section class="buy">
     <p class="buy__bg">СПЕЦПРЕДЛОЖЕНИЕ</p>
     <%= image_tag("sale-buy.png", alt: "спецпредложение", class:"buy__img") %>
     <button class="buy-btn">
-        <span class="buy-btn__text">Посмотреть</span> 
+        <a class="buy-btn__text" href="#">Посмотреть акции</a> 
     </button>
-  </div>
+  </section>
+  <section class="popular">
+    <div class="container">
+      <h2 class="popular__title section-title">Часто смотрят:</h2>
+      <div class="popular__choice">
+        <div class="popular__choice-item popular__choice-item--one">
+          <%= image_tag("popular-1.jpg", alt: "поставщикам", class:"popular__choice-img") %>
+          <p class="popular__choice-text">
+            <a class="offer__item-link" href="#">Свадебные букеты</a>
+          </p>
+        </div>
+        <div class="popular__choice-item popular__choice-item--two">
+          <%= image_tag("popular-2.png", alt: "поставщикам", class:"popular__choice-img") %>
+          <p class="popular__choice-text">
+            <a class="offer__item-link" href="#">Подарочные упаковки</a>
+          </p>
+        </div>
+        <div class="popular__choice-item">
+          <p class="popular__choice-title">
+            Изысканные букеты и сладкие угощения в центре внимания среди покупателей.
+          </p>
+        </div>
+        <div class="popular__choice-item popular__choice-item--three">
+          <%= image_tag("popular-3.jpg", alt: "поставщикам", class:"popular__choice-img") %>
+          <p class="popular__choice-text">
+            <a class="offer__item-link" href="#">Цветы для романтических встреч</a>
+          </p>
+        </div>
+        <div class="popular__choice-item popular__choice-item--four">
+          <%= image_tag("popular-4.png", alt: "поставщикам", class:"popular__choice-img") %>
+          <p class="popular__choice-text">
+            <a class="offer__item-link" href="#">Торты, шоколад, конфеты</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <script defer>
