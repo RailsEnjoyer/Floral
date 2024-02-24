@@ -123,24 +123,32 @@
     </div>
   </section>
   <section class="buy">
-    <p class="buy__bg">СПЕЦПРЕДЛОЖЕНИЕ</p>
-    <%= image_tag("sale-buy.png", alt: "спецпредложение", class:"buy__img") %>
-    <button class="buy-btn">
-        <a class="buy-btn__text" href="#">Посмотреть акции</a> 
-    </button>
+    <div class="buy__content">
+        <div class="buy__discount buy__discount--left">
+            <p>Мы предоставляем специальные<br><br> персональные предложения<br><br> новым клиентам, взгляните</p>
+        </div>
+        <p class="buy__bg">СПЕЦПРЕДЛОЖЕНИЕ</p>
+        <%= image_tag("sale-buy.png", alt: "спецпредложение", class:"buy__img") %>
+        <div class="buy__discount buy__discount--right">
+            <p>До -15% на первый заказ!</p>
+        </div>
+        <button class="buy-btn">
+            <a class="buy-btn__text" href="#">Посмотреть акции</a> 
+        </button>
+    </div>
   </section>
   <section class="popular">
     <div class="container">
       <h2 class="popular__title section-title">Часто смотрят:</h2>
       <div class="popular__choice">
         <div class="popular__choice-item popular__choice-item--one">
-          <%= image_tag("popular-1.jpg", alt: "популярное-1", class:"popular__choice-img") %>
+          <%= image_tag("popular-1.jpg", alt: "популярное-1", class:"popular__choice-img--1 popular__choice-img") %>
           <p class="popular__choice-text">
             <a class="offer__item-link" href="#">Свадебные букеты</a>
           </p>
         </div>
         <div class="popular__choice-item popular__choice-item--two">
-          <%= image_tag("popular-2.png", alt: "популярное-2", class:"popular__choice-img") %>
+          <%= image_tag("popular-2.png", alt: "популярное-2", class:"popular__choice-img--2 popular__choice-img") %>
           <p class="popular__choice-text">
             <a class="offer__item-link" href="#">Подарочные упаковки</a>
           </p>
@@ -151,13 +159,13 @@
           </p>
         </div>
         <div class="popular__choice-item popular__choice-item--three">
-          <%= image_tag("popular-3.jpg", alt: "популярное-3", class:"popular__choice-img") %>
+          <%= image_tag("popular-3.jpg", alt: "популярное-3", class:"popular__choice-img--3 popular__choice-img") %>
           <p class="popular__choice-text">
             <a class="offer__item-link" href="#">Цветы для романтических встреч</a>
           </p>
         </div>
         <div class="popular__choice-item popular__choice-item--four">
-          <%= image_tag("popular-4.png", alt: "популярное-4", class:"popular__choice-img") %>
+          <%= image_tag("popular-4.png", alt: "популярное-4", class:"popular__choice-img--4 popular__choice-img") %>
           <p class="popular__choice-text">
             <a class="offer__item-link" href="#">Торты, шоколад, конфеты</a>
           </p>
@@ -167,69 +175,88 @@
   </section>
   <section class="accessories">
     <div class="container">
-      <h2 class="accessories__title section-title">in the box</h2>
+      <h2 class="accessories__title section-title">Новинки</h2>
       <p class="accessories__text">
-        personalize any expirience
+        Подберите дополнение к своему заказу
       </p>
       <div class="accessories__items">
         <div class="accessories__item">
-          <%= image_tag("popular-4.png", alt: "аксесуар-1", class:"accessories__img") %>
+          <%= image_tag("acc-toy.png", alt: "аксессуар-1", class:"accessories__item-img") %>
           <h3 class="accessories__item-title">
-            asdasdasdasd
+            Игрушки
           </h3>
           <p class="accessories__item-text">
-            asdasdasdasdasdasdasdasdda
+            Подарите радость вашим близким среди наших плюшевых игрушек, каждая из которых обладает своим уникальным характером и теплом.
           </p>
-          <p class="accessories__item-price">543</p>
+          <p class="accessories__item-price">10 - 159 BYN</p>
           <button class="accessories__item-btn">
-            button
+            Купить
+          </button>
+        </div>
+        <div class="accessories__item">
+          <%= image_tag("acc-ribbon.png", alt: "аксессуар-2", class:"accessories__item-img") %>
+          <h3 class="accessories__item-title">
+            Упаковочные ленты
+          </h3>
+          <p class="accessories__item-text">
+            Упаковочные ленты, словно волшебные нити, придают вашим подаркам особое волшебство. Покажите заботу с самой красивой упаковкой.
+          </p>
+          <p class="accessories__item-price">0.5 - 59 BYN</p>
+          <button class="accessories__item-btn">
+            Купить
+          </button>
+        </div>
+        <div class="accessories__item">
+          <%= image_tag("acc-card.png", alt: "аксессуар-3", class:"accessories__item-img") %>
+          <h3 class="accessories__item-title">
+            Открытки и конверты
+          </h3>
+          <p class="accessories__item-text">
+            Наши открытки и конверты преобразят ваши слова в искренние поздравления. Выразите свою любовь и заботу в каждой детали.
+          </p>
+          <p class="accessories__item-price">1 - 19 BYN</p>
+          <button class="accessories__item-btn">
+            Купить
+          </button>
+        </div>
+        <div class="accessories__item">
+          <%= image_tag("acc-flower.png", alt: "аксессуар-4", class:"accessories__item-img") %>
+          <h3 class="accessories__item-title">
+            Цветы: лучшие из хитов
+          </h3>
+          <p class="accessories__item-text">
+            Погрузитесь в наш виртуальный сад, наполненный великолепием цветов - наши лучшие хиты. От роскошных роз до восхитительных орхидей, каждый букет – настоящий шедевр.
+          </p>
+          <p class="accessories__item-price">10 - 149 BYN</p>
+          <button class="accessories__item-btn">
+            Купить
           </button>
         </div>
       </div>
-      <div class="accessories__items">
-        <div class="accessories__item">
-          <%= image_tag("popular-4.png", alt: "аксесуар-2", class:"accessories__img") %>
-          <h3 class="accessories__item-title">
-            asdasdasdasd
-          </h3>
-          <p class="accessories__item-text">
-            asdasdasdasdasdasdasdasdda
+    </div>
+  </section>
+  <section class="contacts">
+    <div class="container">
+      <h2 class="contacts__title">
+        Подпишитесь на новости и обновления
+      </h2>
+      <div class="contacts__inner">
+        <div class="contacts__form">
+          <form class="form">
+            <input class="form__input" type="text" placeholder="E-mail">
+             <button class="form__btn" type="submit">Подписаться</button>
+          </form>
+          <p class="contacts__text">
+            Нажимая "Подписаться", вы автоматически соглашаетесь с нашим Пользовательским Соглашением. 
+            Пожалуйста, ознакомьтесь с ним внимательно.<br>
+            При регистрации вы соглашаетесь получать уведомления о наших акциях, скидках и новостях. 
+            Вы можете отписаться от рассылки в любое время, если это неудобно.<br>
+            Ваши данные хранятся в безопасности, и мы не передаем их третьим лицам. Все действия в соответствии с законодательством о защите данных.<br>
+            Все права защищены. Если у вас есть вопросы или замечания, свяжитесь с нашей службой поддержки.<br>
+            Спасибо, что выбрали нас. Вместе мы создаем прекрасные моменты и воплощаем в жизнь ваши цветочные фантазии.
           </p>
-          <p class="accessories__item-price">543</p>
-          <button class="accessories__item-btn">
-            button
-          </button>
         </div>
-      </div>
-      <div class="accessories__items">
-        <div class="accessories__item">
-          <%= image_tag("popular-4.png", alt: "аксесуар-3", class:"accessories__img") %>
-          <h3 class="accessories__item-title">
-            asdasdasdasd
-          </h3>
-          <p class="accessories__item-text">
-            asdasdasdasdasdasdasdasdda
-          </p>
-          <p class="accessories__item-price">543</p>
-          <button class="accessories__item-btn">
-            button
-          </button>
-        </div>
-      </div>
-      <div class="accessories__items">
-        <div class="accessories__item">
-          <%= image_tag("popular-4.png", alt: "аксесуар-4", class:"accessories__img") %>
-          <h3 class="accessories__item-title">
-            asdasdasdasd
-          </h3>
-          <p class="accessories__item-text">
-            asdasdasdasdasdasdasdasdda
-          </p>
-          <p class="accessories__item-price">543</p>
-          <button class="accessories__item-btn">
-            button
-          </button>
-        </div>
+        <a class="contacts__email" href="#">floral@gmail.com</a>
       </div>
     </div>
   </section>

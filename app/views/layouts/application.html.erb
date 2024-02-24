@@ -56,9 +56,43 @@
     <!--main section starts-->
     <%= yield %>
     <!--main section ends-->
-
     <!--footer section starts-->
-    <footer>
+    <footer class="footer">
+      <div class="container">
+        <nav class="nav">
+          <%= link_to("#", target: "_blank", class: "logo") do %>
+            <%= image_tag("logo.png", alt: "Логотип Floral") %>
+          <% end %>
+          <ul class="menu">
+            <li class="menu__list">
+              <%= link_to "Доставка", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "О нас", "#", target: "_blank", class: "menu__link" %>
+            </li>
+            <li class="menu__list">
+              <%= link_to "Партнерам", "#", target: "_blank", class: "menu__link" %>
+            </li>
+          </ul>
+          <ul class="social">
+            <li class="item">
+              <%= link_to("#", target: "_blank") do %>
+                <%= image_tag("instagram.png", alt: "связаться - instagram", class: "social__link--1") %>
+              <% end %>
+            </li>
+            <li class="item">
+              <%= link_to("#", target: "_blank", class: "social__link--2") do %>
+                <%= image_tag("telegram.png", alt: "связаться - telegram", class: "social__link--2") %>
+              <% end %>
+            </li>
+            <li class="item">
+              <%= link_to("#", target: "_blank", class: "social__link--3") do %>
+                <%= image_tag("gmail.png", alt: "связаться - gmail", class: "social__link--3") %>
+              <% end %>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </footer>
     <!--footer section ends-->
   </body>
