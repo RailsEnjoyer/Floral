@@ -1,0 +1,9 @@
+
+<h1><%= @flower.name %></h1>
+<p>Описание: <%= @flower.description %></p>
+<p>Цена: <%= @flower.price %> руб.</p>
+<%= image_tag @flower.image, class:"flower__show-img" if @flower.image.attached? %>
+
+<%= link_to 'Изменить', edit_flower_path(@flower) %>
+<%= link_to "Удалить", flower_path(@flower), data: { turbo_method: :delete, turbo_confirm: "Вы точно хотите удалить этот товар?" } %>
+<%= link_to 'Назад', flowers_path %>

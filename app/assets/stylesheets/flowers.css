@@ -1,0 +1,21 @@
+.flower {
+  margin-top: 20px;
+}
+
+.flowers-content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+}
+
+.flower__show-img {
+  width: 55%;
+}
+
+.flower-title {
+
+}
+
+.star {
+  width: 15px;
+}

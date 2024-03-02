@@ -5,12 +5,13 @@
     <meta charset="UTF-8">
     <meta name="author" content="Bogdan Davidovich">
     <meta name="keywords" content="Продажа цветов, маркетплейс, цветы, букеты, кондитерская, доставка цветов">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "home", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "flowers", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
@@ -19,24 +20,24 @@
     <header class="header">
       <div class="container">
         <nav class="nav">
-          <%= link_to("#", target: "_blank", class: "logo") do %>
+          <%= link_to root_path, class: "logo" do %>
             <%= image_tag("logo.png", alt: "Логотип Floral") %>
           <% end %>
           <ul class="menu">
             <li class="menu__list">
-              <%= link_to "Цветы", "#", target: "_blank", class: "menu__link" %>
+              <%= link_to "Цветы", flowers_path, class: "menu__link" %>
             </li>
             <li class="menu__list">
-              <%= link_to "Кондитерская", "#", target: "_blank", class: "menu__link" %>
+              <%= link_to "Кондитерская", "#", class: "menu__link" %>
             </li>
             <li class="menu__list">
-              <%= link_to "Доставка", "#", target: "_blank", class: "menu__link" %>
+              <%= link_to "Доставка", "#", class: "menu__link" %>
             </li>
             <li class="menu__list">
-              <%= link_to "О нас", "#", target: "_blank", class: "menu__link" %>
+              <%= link_to "О нас", "#", class: "menu__link" %>
             </li>
             <li class="menu__list">
-              <%= link_to "Партнерам", "#", target: "_blank", class: "menu__link" %>
+              <%= link_to "Партнерам", "#", class: "menu__link" %>
             </li>
             <li class="menu__list cart">
               <%= link_to("#", target: "_blank") do %>
@@ -56,6 +57,7 @@
     <!--main section starts-->
     <%= yield %>
     <!--main section ends-->
+    
     <!--footer section starts-->
     <footer class="footer">
       <div class="container">
@@ -86,7 +88,7 @@
               <% end %>
             </li>
             <li class="item">
-              <%= link_to("#", target: "_blank", class: "social__link--3") do %>
+              <%= link_to("mailto:floralflowersby@gmail.com") do %>
                 <%= image_tag("gmail.png", alt: "связаться - gmail", class: "social__link--3") %>
               <% end %>
             </li>

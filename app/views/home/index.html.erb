@@ -5,7 +5,7 @@
       <p class="subtitle animated">В нашем магазине - ваш лучший выбор для цветочных настроений, где каждый бутон 
       - это уникальный кусочек природы, готовый украсить ваш день.</p>
       <button class="buy-btn">
-        <span class="buy-btn__text">Перейти в каталог*</span> 
+        <%= link_to "Перейти в каталог*", flowers_path, class: "buy-btn__text" %>
       </button>
       <p class="buy__text">*Каталог поставщиков</p>
     </div>
@@ -15,6 +15,7 @@
       <div class="pros__titles">
         <h2 class="pros__title section-title">Почему наш магазин - ваш выбор?</h2>
         <p class="pros__text">От подбора букета до доставки близкому - за минуту.</p>
+        <button id="goToTopBtn">Наверх</button>
       </div>
       <div class="tabs">
         <div class="tabs__btn">
@@ -124,14 +125,8 @@
   </section>
   <section class="buy">
     <div class="buy__content">
-        <div class="buy__discount buy__discount--left">
-            <p>Мы предоставляем специальные<br><br> персональные предложения<br><br> новым клиентам, взгляните</p>
-        </div>
         <p class="buy__bg">СПЕЦПРЕДЛОЖЕНИЕ</p>
         <%= image_tag("sale-buy.png", alt: "спецпредложение", class:"buy__img") %>
-        <div class="buy__discount buy__discount--right">
-            <p>До -15% на первый заказ!</p>
-        </div>
         <button class="buy-btn">
             <a class="buy-btn__text" href="#">Посмотреть акции</a> 
         </button>
@@ -194,7 +189,7 @@
           </button>
         </div>
         <div class="accessories__item">
-          <%= image_tag("acc-ribbon.png", alt: "аксессуар-2", class:"accessories__item-img") %>
+          <%= image_tag("acc-ribbon.jpg", alt: "аксессуар-2", class:"accessories__item-img") %>
           <h3 class="accessories__item-title">
             Упаковочные ленты
           </h3>
@@ -220,7 +215,7 @@
           </button>
         </div>
         <div class="accessories__item">
-          <%= image_tag("acc-flower.png", alt: "аксессуар-4", class:"accessories__item-img") %>
+          <%= image_tag("acc-flower.jpg", alt: "аксессуар-4", class:"accessories__item-img") %>
           <h3 class="accessories__item-title">
             Цветы: лучшие из хитов
           </h3>
@@ -255,8 +250,11 @@
             Все права защищены. Если у вас есть вопросы или замечания, свяжитесь с нашей службой поддержки.<br>
             Спасибо, что выбрали нас. Вместе мы создаем прекрасные моменты и воплощаем в жизнь ваши цветочные фантазии.
           </p>
+          <p class="gelya">
+            <br><br>Gelya 143
+          </p>
         </div>
-        <a class="contacts__email" href="#">floral@gmail.com</a>
+        <a class="contacts__email" href="mailto:floralflowersby@gmail.com">floralflowersby@gmail.com</a>
       </div>
     </div>
   </section>
@@ -358,6 +356,27 @@
     });
 
     handleAnimation(); // Вызываем функцию для первоначальной установки классов
+  });
+</script>
+
+<script>
+  var mybutton = document.getElementById("goToTopBtn");
+
+  window.onscroll = function () {
+    showButton();
+  };
+
+  function showButton() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  mybutton.addEventListener("click", function () {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   });
 </script>
 

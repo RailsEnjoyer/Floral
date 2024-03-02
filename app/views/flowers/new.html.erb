@@ -1,0 +1,56 @@
+<%= form_with(model: @flower, url: flowers_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :"Название" %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :"Описание" %>
+    <%= form.text_field :description %>
+  </div>
+  <div>
+    <%= form.label :"Цена" %>
+    <%= form.text_field :price %>
+  </div>
+  <div>
+    <%= form.label :"Цвет (преобладающий)" %>
+    <select id="color" name="color">
+      <option value="#ff0000">Красный</option>
+      <option value="#00ff00">Зеленый</option>
+      <option value="#0000ff">Синий</option>
+      <option value="#ffff00">Желтый</option>
+      <option value="#ff00ff">Фиолетовый</option>
+      <option value="#ffffff">Белый</option>
+      <option value="#000000">Черный</option>
+    </select>
+  </div>
+  <div>
+    <%= form.label :"К событию" %>
+    <%= form.select :event, options_for_select(['Свадьба', 'День рождения', 'Юбилей', 'Другое']) %>
+  </div>
+  <div>
+    <%= form.label :"Комплектация" %>
+    <%= form.collection_check_boxes :equipment, ['Опция 1', 'Опция 2', 'Опция 3'], :to_s, :humanize %>
+  </div>
+  <div>
+    <%= form.label :"Акция" %>
+    <%= form.collection_radio_buttons :sale, [['Да', true], ['Нет', false]], :second, :first %>
+  </div>
+  <div>
+    <%= form.label :"Продавец" %>
+    <%= form.text_field :vendor %>
+  </div>
+  <div>
+    <%= form.label :"Рейтинг" %>
+    <%= form.text_field :rating %>
+  </div>
+  <div>
+    <%= form.label :"Кол-во куплено" %>
+    <%= form.text_field :purchased_count %>
+  </div>
+  <div>
+    <%= form.file_field :image %>
+  </div>
+  <div>
+    <%= form.submit 'Добавить продукт' %>
+  </div>
+<% end %>

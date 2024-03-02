@@ -19,6 +19,19 @@
   margin-bottom: 5%;
 }
 
+#goToTopBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(13, 116, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
 .buy__text{
   padding-top: 6px;
   font-size: 13px;
@@ -324,24 +337,6 @@
   animation: line-text 12s linear 0.3s infinite;
 }
 
-.buy__discount {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 34px;
-  font-weight: 700;
-  color: rgb(211, 1, 1); /* Подстрой цвет и стили под свои предпочтения */
-  line-height: 16px;
-}
-
-.buy__discount--left {
-  left: 7%; /* Регулируй расстояние слева от изображения */
-}
-
-.buy__discount--right {
-  right: 10%; /* Регулируй расстояние справа от изображения */
-}
-
 @keyframes line-text {
   from {
     transform: translate(50%);
@@ -375,26 +370,6 @@
 
 .popular__choice-img {
   margin-bottom: 10px;
-}
-
-.popular__choice-img--1 {
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); /* Это создаст тень с размытыми краями */
-  border-radius: 30px;
-}
-
-.popular__choice-img--2 {
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); 
-  border-radius: 30px;
-}
-
-.popular__choice-img--3 {
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); 
-  border-radius: 30px;
-}
-
-.popular__choice-img--4 {
-  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5); 
-  border-radius: 30px;
 }
 
 .popular__choice-title {
@@ -546,5 +521,10 @@
   right: 0;
   bottom: 5px;
   z-index: 1;
+}
+
+.gelya {
+  font-size: 9px;
+  color: grey;
 }
 

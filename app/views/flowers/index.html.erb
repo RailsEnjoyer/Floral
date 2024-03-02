@@ -1,0 +1,35 @@
+<section class="flowers-index">
+  <div class="container">
+    <div class="flowers-content">
+      <% @flowers.each do |flower| %>
+        <div class="flower">
+          <%= image_tag flower.image, class:"flower__show-img" if flower.image.attached? %>
+          <div class="flower-title">
+            <%= link_to flower.name, flower_path(flower), target: "_blank" %>
+          </div>
+          <div class="flower-vendor">
+            Поставщик: <%= flower.vendor %>
+          </div>
+          <div class="flower-rating">
+            <%= flower.rating %>
+            <% rating = flower.rating.gsub(',', '.').to_f %>
+            <% full_stars = rating.to_i %>
+            <% remainder = rating % 1 %>
+
+            <%= image_tag("star_full.png", alt: "Full Star", class: "star") * full_stars %>
+            <% if remainder > 0 %>
+              <%= image_tag("star_half.png", alt: "Half Star", class: "star") %>
+            <% end %>
+            <%= image_tag("star_empty.png", alt: "Empty Star", class: "star") * (5 - full_stars - (remainder > 0 ? 1 : 0)) %>
+          </div>
+          <div class="flower-purchase_count">
+            Куплено: <%= flower.purchased_count %>
+          </div>
+          <div class="flower-price">
+            <%= flower.price %> руб.
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
