@@ -2,6 +2,7 @@
 <h1><%= @flower.name %></h1>
 <p>Описание: <%= @flower.description %></p>
 <p>Цена: <%= @flower.price %> руб.</p>
+<p>color: <%= @flower.color %></p>
 <%= image_tag @flower.image, class:"flower__show-img" if @flower.image.attached? %>
 
 <%= link_to 'Изменить', edit_flower_path(@flower) %>

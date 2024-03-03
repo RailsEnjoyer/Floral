@@ -1,30 +1,43 @@
 <section class="flowers-index">
   <div class="container">
+    <div class="flowers-title">Откройте для себя волшебство цветов: огромный выбор ярких и нежных оттенков, чтобы добавить красоту и свежесть в вашу жизнь.</div>
     <div class="flowers-content">
       <% @flowers.each do |flower| %>
         <div class="flower">
-          <%= image_tag flower.image, class:"flower__show-img" if flower.image.attached? %>
+          <%= image_tag flower.image, class:"flower__index-img" if flower.image.attached? %>
           <div class="flower-title">
             <%= link_to flower.name, flower_path(flower), target: "_blank" %>
           </div>
-          <div class="flower-vendor">
-            Поставщик: <%= flower.vendor %>
+          <div class="flower-color">
+            <span class="flower-label">Цвет:</span>
+            <span class="flower-value"><%= flower.color %></span>
           </div>
-          <div class="flower-rating">
-            <%= flower.rating %>
-            <% rating = flower.rating.gsub(',', '.').to_f %>
-            <% full_stars = rating.to_i %>
-            <% remainder = rating % 1 %>
-
-            <%= image_tag("star_full.png", alt: "Full Star", class: "star") * full_stars %>
-            <% if remainder > 0 %>
-              <%= image_tag("star_half.png", alt: "Half Star", class: "star") %>
-            <% end %>
-            <%= image_tag("star_empty.png", alt: "Empty Star", class: "star") * (5 - full_stars - (remainder > 0 ? 1 : 0)) %>
+          <div class="flower-event">
+            <p class="text-left">Событие:</p> <%= flower.event %>
+          </div>
+          <div class="flower-equipment">
+            <%= flower.equipment.tr('[]/"','').sub!(/^[, ]/, '') %>.
+          </div>
+          <div class="flower-vendor">
+            <p class="text-left">Поставщик:</p> <%= flower.vendor %>
           </div>
           <div class="flower-purchase_count">
-            Куплено: <%= flower.purchased_count %>
+            <p class="text-left">Куплено:</p> <%= flower.purchased_count %>
           </div>
+          <% rating = flower.rating.gsub(',', '.').to_f %>
+          <% full_stars = rating.to_i %>
+          <% remainder = rating % 1 %>
+          <span class="flower-rating"><%=flower.rating%>
+            <% for i in 1..5 do %>
+              <% if rating >= i %>
+                <%= image_tag('star_full.png', class:"star") %>
+              <% elsif rating >= i - 0.5 && rating < i %>
+                <%= image_tag('star_half.png', class:"star") %>
+              <% else %>
+                <%= image_tag('star_empty.png', class:"star") %>
+              <% end %>
+            <% end %>
+          </span>
           <div class="flower-price">
             <%= flower.price %> руб.
           </div>

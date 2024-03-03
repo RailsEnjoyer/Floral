@@ -1,21 +1,117 @@
 .flower {
-  margin-top: 20px;
+  border: 2px solid rgb(13, 116, 0);
+  margin-bottom: 10px;
+  width: 300px;
+  margin-top: 50px;
+}
+
+.flowers-index {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: linear-gradient(rgb(241, 240, 245), rgb(241, 240, 245) 50%);
 }
 
 .flowers-content {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
 
+.flower__index-img {
+  max-width: 90%;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+  box-shadow: 0 0 50px rgba(13, 116, 0, 0.6);
 }
 
 .flower__show-img {
-  width: 55%;
+  max-width: 15%;
 }
 
 .flower-title {
+  text-align: center;
+  margin-bottom: 10px;display: grid;
+  grid-template-columns: auto 1fr;
+  border-bottom: 2px solid rgb(13, 116, 0);
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+}
 
+.flower-info{
+  font-size: 14px;
+  margin: 10px;
+  text-align: end;
+  border-bottom: 1px solid rgb(13, 116, 0);
+}
+
+.flower-event {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 14px;
+  margin: 10px;
+  text-align: end;
+  border-bottom: 1px solid rgb(13, 116, 0);
+}
+
+.flower-equipment {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 14px;
+  margin: 10px;
+  text-align: start;
+  border-bottom: 1px solid rgb(13, 116, 0);
+  font-weight: 700;
+  min-height: 40px;
 }
 
 .star {
-  width: 15px;
+  width: 18px;
+}
+
+.flower-vendor {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 12px;
+  text-align: end;
+  margin: 10px;
+  border-bottom: 1px solid rgb(13, 116, 0);
+  font-weight: 700;
+}
+
+.flower-rating {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.flower-purchase_count {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  font-size: 14px;
+  margin: 10px;
+  text-align: end;
+  border-bottom: 1px solid rgb(13, 116, 0);
+}
+
+.flower-price {
+  font-size: 20px;
+  text-align: center;
+  border-top: 2px solid rgb(13, 116, 0);
+}
+
+.flower-color {
+  display: grid;display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr;
+  font-size: 14px;
+  margin: 10px;
+  text-align: end;
+  border-bottom: 1px solid rgb(13, 116, 0);
+}
+
+.flower-label {
+}
+
+.flower-value {
+  
 }

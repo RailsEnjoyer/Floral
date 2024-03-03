@@ -13,27 +13,19 @@
   </div>
   <div>
     <%= form.label :"Цвет (преобладающий)" %>
-    <select id="color" name="color">
-      <option value="#ff0000">Красный</option>
-      <option value="#00ff00">Зеленый</option>
-      <option value="#0000ff">Синий</option>
-      <option value="#ffff00">Желтый</option>
-      <option value="#ff00ff">Фиолетовый</option>
-      <option value="#ffffff">Белый</option>
-      <option value="#000000">Черный</option>
-    </select>
+    <%= form.select :color, options_for_select(['Красный', 'Зеленый', 'Синий', 'Желтый', 'Фиолетовый', 'Белый', 'Черный'], selected: @flower.color) %>
   </div>
   <div>
     <%= form.label :"К событию" %>
-    <%= form.select :event, options_for_select(['Свадьба', 'День рождения', 'Юбилей', 'Другое']) %>
+    <%= form.select :event, options_for_select(['Свадьба', 'День рождения', 'Юбилей', 'Другое'], selected: @flower.event) %>
   </div>
   <div>
     <%= form.label :"Комплектация" %>
-    <%= form.collection_check_boxes :equipment, ['Опция 1', 'Опция 2', 'Опция 3'], :to_s, :humanize %>
+    <%= form.collection_check_boxes :equipment, ['В наличии', 'В упаковке', 'Доставка курьером магазина'], :to_s, :humanize, checked: @flower.equipment %>
   </div>
   <div>
     <%= form.label :"Акция" %>
-    <%= form.collection_radio_buttons :sale, [['Да', true], ['Нет', false]], :second, :first %>
+    <%= form.collection_radio_buttons :sale, [['Да', true], ['Нет', false]], :second, :first, checked: @flower.sale %>
   </div>
   <div>
     <%= form.label :"Продавец" %>
