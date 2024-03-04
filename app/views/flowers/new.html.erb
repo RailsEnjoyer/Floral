@@ -16,12 +16,8 @@
     <%= form.select :color, options_for_select(['Красный', 'Зеленый', 'Синий', 'Желтый', 'Фиолетовый', 'Белый', 'Черный'], selected: @flower.color) %>
   </div>
   <div>
-    <%= form.label :"К событию" %>
-    <%= form.select :event, options_for_select(['Свадьба', 'День рождения', 'Юбилей', 'Другое'], selected: @flower.event) %>
-  </div>
-  <div>
     <%= form.label :"Комплектация" %>
-    <%= form.collection_check_boxes :equipment, ['В наличии', 'В упаковке', 'Доставка курьером магазина'], :to_s, :humanize, checked: @flower.equipment %>
+    <%= form.select :equipment, options_for_select(['В наличии', 'В упаковке', 'Доставка курьером магазина'], selected: @flower.equipment) %>
   </div>
   <div>
     <%= form.label :"Акция" %>

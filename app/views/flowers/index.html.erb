@@ -1,7 +1,84 @@
 <section class="flowers-index">
   <div class="container">
-    <div class="flowers-title">Откройте для себя волшебство цветов: огромный выбор ярких и нежных оттенков, чтобы добавить красоту и свежесть в вашу жизнь.</div>
+    <div class="flowers-title">Откройте для себя волшебство цветов:</div>
+    <div class="flowers-subtitle">Огромный выбор ярких и нежных оттенков, чтобы добавить красоту и свежесть в вашу жизнь.</div>
+    <%= form_tag flowers_path, method: :get do %>
+      <aside class="sidebar">
+        <section class="filter-color">
+        <%= check_box_tag "color[]", "Красный", params[:color].present? && params[:color].include?("Красный") %>
+        <%= label_tag "Красный" %>
+        <%= check_box_tag "color[]", "Синий", params[:color].present? && params[:color].include?("Синий") %>
+        <%= label_tag "Синий" %>
+        <%= check_box_tag "color[]", "Зелёный", params[:color].present? && params[:color].include?("Зеленый") %>
+        <%= label_tag "Зелёный" %>
+        <%= check_box_tag "color[]", "Белый", params[:color].present? && params[:color].include?("Белый") %>
+        <%= label_tag "Белый" %>
+        <%= check_box_tag "color[]", "Чёрный", params[:color].present? && params[:color].include?("Черный") %>
+        <%= label_tag "Чёрный" %>
+        <%= check_box_tag "color[]", "Жёлтый", params[:color].present? && params[:color].include?("Желтый") %>
+        <%= label_tag "Жёлтый" %>
+        <%= check_box_tag "color[]", "Фиолетовый", params[:color].present? && params[:color].include?("Фиолетовый") %>
+        <%= label_tag "Фиолетовый" %>
+        </section>
+        <section class="filter-name">
+        <h3>Поиск по названию</h3>
+        <%= text_field_tag :search, params[:search] %>
+        </section>
+        <section class="filter-description">
+        <h3>Поиск по описанию</h3>
+        <%= text_field_tag :description_search, params[:description_search] %>
+        </section>
+        <section class="filter-price">
+        <div>
+          <%= label_tag "Минимальная цена" %>
+          <%= number_field_tag :min_price, params[:min_price] %>
+        </div>
+        <div>
+          <%= label_tag "Максимальная цена" %>
+          <%= number_field_tag :max_price, params[:max_price] %>
+        </div>
+        </section>
+        <section class="filter-equipment">
+        <%= check_box_tag "equipment[]", "В наличии", params[:equipment].present? && params[:equipment].include?('В наличии') %>
+        <%= label_tag "В наличии" %>
+        
+        <%= check_box_tag "equipment[]", "В упаковке", params[:equipment].present? && params[:equipment].include?("В упаковке") %>
+        <%= label_tag "В упаковке" %>
+
+        <%= check_box_tag "equipment[]", "Доставка курьером магазина", params[:equipment].present? && params[:equipment].include?("Доставка курьером магазина") %>
+        <%= label_tag "Доставка курьером магазина" %>
+        </section>
+        <section class="filter-sale">
+        <div>
+          <%= label_tag :"Акция" %>
+          <%= check_box_tag "sale", 'true', params[:sale] == 'true' %>
+          <%= label_tag "Да" %>
+        </div>
+        </section>
+        <section class="filter-vendor">
+        <div>
+          <%= label_tag :"Поставщик" %>
+          <% vendors = Flower.pluck(:vendor).uniq %>
+          <%= select_tag "vendor", options_for_select(['Все'] + vendors, params[:vendor]) %>
+        </div>
+        </section>
+        <section class="filter-rating">
+        <div>
+          <%= label_tag :"Сортировка по рейтингу" %>
+          <%= select_tag "sort", options_for_select(['', 'По возрастанию', 'По убыванию'], params[:sort]) %>
+        </div>
+        </section>
+        <section class="filter-popular">
+        <h3>Популярное</h3>
+        <div>
+          <%= select_tag "sort_popular", options_for_select(['', 'По возрастанию', 'По убыванию'], params[:sort_popular]) %>
+          <%= submit_tag "Применить фильтры" %>
+        </div>
+        </section>
+      </aside>
+    <% end %>
     <div class="flowers-content">
+    
       <% @flowers.each do |flower| %>
         <div class="flower">
           <%= image_tag flower.image, class:"flower__index-img" if flower.image.attached? %>
@@ -12,11 +89,8 @@
             <span class="flower-label">Цвет:</span>
             <span class="flower-value"><%= flower.color %></span>
           </div>
-          <div class="flower-event">
-            <p class="text-left">Событие:</p> <%= flower.event %>
-          </div>
           <div class="flower-equipment">
-            <%= flower.equipment.tr('[]/"','').sub!(/^[, ]/, '') %>.
+            <%= flower.equipment %>.
           </div>
           <div class="flower-vendor">
             <p class="text-left">Поставщик:</p> <%= flower.vendor %>
